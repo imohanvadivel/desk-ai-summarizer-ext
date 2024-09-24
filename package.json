@@ -1,0 +1,41 @@
+{
+  "name": "desk-template-svelte",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Mohan Vadivel",
+    "url": "https://mohanvadivel.com",
+    "email": "mohan@mohanvadivel.com"
+  },
+  "license": "MIT",
+  "description": "This repository provides a template for building Desk extensions using Deskblocks.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imohanvadivel/desk-ext-template.git"
+  },
+  "bugs": "https://github.com/imohanvadivel/desk-ext-template/issues",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node build.js",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@sveltejs/vite-plugin-svelte-inspector": "^2.1.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "adm-zip": "^0.5.16",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.5",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-plugin-singlefile": "^2.0.2",
+    "vite-svg-loader": "^5.1.0"
+  },
+  "dependencies": {
+    "deskblocks": "^0.0.2"
+  }
+}

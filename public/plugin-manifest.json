@@ -1,0 +1,27 @@
+{
+  "locale": [
+    "en"
+  ],
+  "service": "DESK",
+  "storage": false,
+  "type": "personal",
+  "whiteListedDomains": [],
+  "modules": {
+    "widgets": [
+      {
+        "location": "desk.ticket.detail.subtab",
+        "url": "index.html",
+        "name": "DeskExt",
+        "logo": "assets/logo.png",
+        "icon": "assets/logo.png"
+      }
+    ]
+  },
+  "cspDomains": {
+    "connect-src": []
+  },
+  "zohoAuthorisation": {},
+  "connectors": [],
+  "config": [],
+  "moduleSupport": false
+}

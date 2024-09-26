@@ -10,7 +10,7 @@
     "widgets": [
       {
         "location": "desk.ticket.detail.subtab",
-        "url": "index.html",
+        "url": "/index.html",
         "name": "DeskExt",
         "logo": "assets/logo.png",
         "icon": "assets/logo.png"

@@ -69,7 +69,7 @@ function appendAppInURL() {
         if (jsonData.modules && jsonData.modules.widgets) {
             jsonData.modules.widgets.forEach((widget) => {
                 if (widget.url && !widget.url.startsWith("/app")) {
-                    widget.url = `/app/${widget.url}`;
+                    widget.url = `/app${widget.url}`;
                 }
                 if (widget.logo && !widget.logo.startsWith("/app")) {
                     widget.logo = `/app/${widget.logo}`;

@@ -10,10 +10,17 @@
     "widgets": [
       {
         "location": "desk.ticket.detail.subtab",
-        "url": "/index.html",
-        "name": "DeskExt",
-        "logo": "assets/logo.png",
-        "icon": "assets/logo.png"
+        "url": "/widget.html",
+        "name": "Test Extension",
+        "logo": "/assets/logo.png",
+        "icon": "/assets/logo.png"
+      },
+      {
+        "location": "desk.extension.preference",
+        "url": "/preference.html",
+        "name": "Preference",
+        "logo": "/assets/logo.png",
+        "icon": "/assets/logo.png"
       }
     ]
   },

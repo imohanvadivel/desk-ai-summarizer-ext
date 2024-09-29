@@ -17,5 +17,7 @@
 </script>
 
 <main>
-    <Button>Hey there</Button>
+    <h1>UserPreference</h1>
+    <Button>Save</Button>
+    <Button variant="secondary">Cancel</Button>
 </main>

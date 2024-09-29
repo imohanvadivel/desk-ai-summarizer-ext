@@ -19,7 +19,8 @@ function moveFiles() {
 
     // Paths to the files/directories you want to move
     const sourceFiles = [
-        path.join(__dirname, "output", "index.html"),
+        path.join(__dirname, "output", "widget.html"),
+        path.join(__dirname, "output", "preference.html"),
         path.join(__dirname, "output", "chunks"),
         path.join(__dirname, "output", "assets"),
         path.join(__dirname, "output", "translations"),
@@ -72,10 +73,10 @@ function appendAppInURL() {
                     widget.url = `/app${widget.url}`;
                 }
                 if (widget.logo && !widget.logo.startsWith("/app")) {
-                    widget.logo = `/app/${widget.logo}`;
+                    widget.logo = `/app${widget.logo}`;
                 }
                 if (widget.icon && !widget.icon.startsWith("/app")) {
-                    widget.icon = `/app/${widget.icon}`;
+                    widget.icon = `/app${widget.icon}`;
                 }
             });
         }

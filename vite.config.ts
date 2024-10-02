@@ -16,8 +16,8 @@ export default defineConfig({
         rollupOptions: {
             output: {},
             input: {
-                main: "widget.html",
-                additional: "preference.html",
+                main: "widget1.html",
+                widget2: "widget2.html",
             },
         },
     },

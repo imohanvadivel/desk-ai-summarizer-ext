@@ -35,6 +35,6 @@
     "vite-svg-loader": "^5.1.0"
   },
   "dependencies": {
-    "deskblocks": "^0.0.2"
+    "deskblocks": "^0.0.3"
   }
 }

@@ -19,8 +19,8 @@ function moveFiles() {
 
     // Paths to the files/directories you want to move
     const sourceFiles = [
-        path.join(__dirname, "output", "widget.html"),
-        path.join(__dirname, "output", "preference.html"),
+        path.join(__dirname, "output", "widget1.html"),
+        path.join(__dirname, "output", "widget2.html"),
         path.join(__dirname, "output", "chunks"),
         path.join(__dirname, "output", "assets"),
         path.join(__dirname, "output", "translations"),

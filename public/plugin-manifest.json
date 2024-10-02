@@ -10,14 +10,14 @@
     "widgets": [
       {
         "location": "desk.ticket.detail.subtab",
-        "url": "/widget.html",
+        "url": "/widget1.html",
         "name": "Test Extension",
         "logo": "/assets/logo.png",
         "icon": "/assets/logo.png"
       },
       {
         "location": "desk.extension.preference",
-        "url": "/preference.html",
+        "url": "/widget2.html",
         "name": "Preference",
         "logo": "/assets/logo.png",
         "icon": "/assets/logo.png"

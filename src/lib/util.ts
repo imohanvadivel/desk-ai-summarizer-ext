@@ -1,10 +1,10 @@
-export type UserPreference = {
+type UserPreference = {
     theme?: "blue" | "red" | "green" | "yellow" | "orange";
     appearance?: "light" | "dark" | "auto" | "pureDark";
     fontFamily?: "Puvi" | "Roboto" | "Lato";
 };
 
-export function setUserPref(userPref: UserPreference) {
+function setUserPref(userPref: UserPreference) {
     console.log(`Setting user pref: ${JSON.stringify(userPref)}`);
 
     const root = document.documentElement;
@@ -48,4 +48,14 @@ export function setUserPref(userPref: UserPreference) {
 
         root.classList.add(`font-${userPref.fontFamily.toLowerCase()}`);
     }
+}
+
+export function initApp(): Promise<APP> {
+    return new Promise((resolve) => {
+        ZOHODESK.extension.onload().then((app) => {
+            setUserPref(app.meta.userPreferences);
+            app.instance.on("user_preference.changed", (pref: UserPreference) => setUserPref(pref));
+            resolve(app);
+        });
+    });
 }

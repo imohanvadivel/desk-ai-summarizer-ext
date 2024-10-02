@@ -22,8 +22,7 @@ function moveFiles() {
         path.join(__dirname, "output", "widget1.html"),
         path.join(__dirname, "output", "widget2.html"),
         path.join(__dirname, "output", "chunks"),
-        path.join(__dirname, "output", "assets"),
-        path.join(__dirname, "output", "translations"),
+        path.join(__dirname, "output", "assets")
     ];
 
     const destinationDir = path.join(__dirname, "output", "app");

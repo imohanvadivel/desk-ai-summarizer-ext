@@ -4,6 +4,7 @@ type UserPreference = {
     fontFamily?: "Puvi" | "Roboto" | "Lato";
 };
 
+// sets the user preference to the widget
 function setUserPref(userPref: UserPreference) {
     console.log(`Setting user pref: ${JSON.stringify(userPref)}`);
 
@@ -50,6 +51,7 @@ function setUserPref(userPref: UserPreference) {
     }
 }
 
+// initialize the app
 export function initApp(): Promise<APP> {
     return new Promise((resolve) => {
         ZOHODESK.extension.onload().then((app) => {
@@ -58,4 +60,64 @@ export function initApp(): Promise<APP> {
             resolve(app);
         });
     });
+}
+
+// validate the key for db storage
+function validateKey(key: string) {
+    return /^[a-zA-Z0-9_,:]{1,50}$/g.test(key);
+}
+
+// utility class for extension db operations
+export class DB {
+    static async set({ key, value, queriableValue = "" }: { key?: string; value: any; queriableValue?: string }) {
+        if ((key && !validateKey(key)) || (queriableValue && !validateKey(queriableValue))) {
+            throw new Error("Invalid key or queriableValue");
+        }
+
+        return await ZOHODESK.set("database", { key, value, queriableValue });
+    }
+
+    static async get({
+        key,
+        queriableValue,
+        from,
+        limit,
+    }: {
+        key?: string;
+        queriableValue?: string;
+        from?: number;
+        limit?: number;
+    }) {
+        if ((key && !validateKey(key)) || (queriableValue && !validateKey(queriableValue))) {
+            throw new Error("Invalid key or queriableValue");
+        }
+
+        const payload: any = { key, queriableValue, from, limit };
+        if (!queriableValue) delete payload.queriableValue;
+        if (!from) delete payload.from;
+        if (!limit) delete payload.limit;
+        if (!key) delete payload.key;
+
+        if (Object.keys(payload).length === 0) {
+            throw new Error("At least one of key or queriableValue is required");
+        }
+
+        return await ZOHODESK.get("database", payload);
+    }
+
+    static async delete({ key, queriableValue }: { key?: string; queriableValue?: string }) {
+        if ((key && !validateKey(key)) || (queriableValue && !validateKey(queriableValue))) {
+            throw new Error("Invalid key or queriableValue");
+        }
+
+        const payload: any = { key, queriableValue };
+        if (!key) delete payload.key;
+        if (!queriableValue) delete payload.queriableValue;
+
+        if (Object.keys(payload).length === 0) {
+            throw new Error("At least one of key or queriableValue is required");
+        }
+
+        return await ZOHODESK.delete("database", payload);
+    }
 }

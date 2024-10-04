@@ -6,8 +6,8 @@
     let App;
     setContext("App", App);
 
-    onMount(() => {
-        initApp().then((app) => (App = app));
+    onMount(async() => {
+        App = await initApp();
     });
 </script>
 

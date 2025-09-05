@@ -5,20 +5,15 @@
   "service": "DESK",
   "storage": false,
   "type": "personal",
-  "whiteListedDomains": [],
+  "whiteListedDomains": [
+    "https://desk.zoho.com"
+  ],
   "modules": {
     "widgets": [
       {
-        "location": "desk.ticket.detail.subtab",
+        "location": "desk.ticket.detail.moreaction",
         "url": "/widget1.html",
-        "name": "Test Extension",
-        "logo": "/assets/logo.png",
-        "icon": "/assets/logo.png"
-      },
-      {
-        "location": "desk.extension.preference",
-        "url": "/widget2.html",
-        "name": "Preference",
+        "name": "Summarizer",
         "logo": "/assets/logo.png",
         "icon": "/assets/logo.png"
       }
@@ -28,7 +23,19 @@
     "connect-src": []
   },
   "zohoAuthorisation": {},
-  "connectors": [],
+  "connectors": [
+    {
+      "connectionLinkName": "desk",
+      "connectionName": "desk",
+      "serviceName": "zlabs_integration",
+      "userAccess": false,
+      "isUserDefinedService": false,
+      "sharedBy": "665784067",
+      "scope": [
+        "Desk.tickets.READ"
+      ]
+    }
+  ],
   "config": [],
   "moduleSupport": false
 }

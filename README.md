@@ -1,49 +1,24 @@
-# Desk Extension Template
+# Desk AI Summarizer Extension
 
-This template helps you quickly start building Zoho Desk extensions using the [Deskblocks](https://deskblocks.mohanvadivel.com) library.
+This is a summarization extension for Zoho Desk that leverages your browser's local machine learning model. It currently works on Chrome version 138 or later.
 
-- **Deskblocks** is a Svelte library that provides ready-to-use components and styles for Zoho Desk extensions.
-- **Recommended tools**: Use [VS Code](https://code.visualstudio.com/) with the [Svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+This extension is built with the help of [Deskblocks library](https://deskblocks.mohanvadivel.com/).
 
-## Getting Started
 
-1. Clone the git repository and install the necessary packages:
+Demo: https://youtu.be/qOdXtg4ITmI?si=Izq8nocbqVxxz93P
 
-    ```bash
-    git clone https://github.com/imohanvadivel/desk-ext-template.git
-    cd desk-ext-template
-    npm i
-    ```
 
-    The template includes Deskblocks, TypeScript definitions, and other utilities, which are automatically installed.
+## Important Note:
+Zoho Desk loads extensions inside an iframe, which by default does not grant access to local ML models. To enable the extension to function properly, you need to manually override the iframe permissions by adding the following attributes to the allow parameter:
 
-2. **Enable developer mode in Zoho Desk** to test the extension directly in Desk.
+```html
+<iframe allow="language-model;">
+    ...
+</iframe>
+```
 
-3. Start the development server:
+or you can simply select the ifrom in your developer tool and paste the following command in your console, now refresh the extension and you are good to go.
 
-    ```bash
-    # Runs the server on port 5000
-    npm run dev
-
-    # Bundles the files and creates a zip in the dist folder
-    npm run build
-    ```
-
-    > Note: On first run, you may need to grant sudo permission to generate a TSL certificate since the development server uses `https` protocol.
-
-4. After running the build command, the bundled zip file (`ext.zip`) will be located in the `dist` folder. You can upload it directly to [Sigma](https://sigma.zoho.com/).
-
-## Miscellaneous
-
-- The `plugin-manifest`, `resources.json`, and localization files are in the `public` directory. You may need to modify them based on your needs.
-- Static files (e.g., images) go in the `assets` folder inside `public`. Use them in your code like this:
-
-    ```html
-    <img src="assets/img.png" />
-    ```
-
-- This template uses [Vite](https://vitejs.dev/) under the hood, so you can enjoy all of its benefits like hot module replacement, fast compilation, lazy loading and so on.
-
-## Additional Resources
-- [Extension Guide](https://www.zoho.com/desk/extensions/guide/introduction.html)
-- [Developer Forum](https://help.zoho.com/portal/en/community/zoho-desk/zoho-desk-extension-developers)
+```js
+$0.setAttribute("allow", "language-model;");
+```

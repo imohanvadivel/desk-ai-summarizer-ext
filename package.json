@@ -28,6 +28,7 @@
     "adm-zip": "^0.5.16",
     "svelte": "^4.2.18",
     "svelte-check": "^3.8.5",
+    "svelte-markdown": "^0.4.1",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",

@@ -17,7 +17,9 @@ Zoho Desk loads extensions inside an iframe, which by default does not grant acc
 </iframe>
 ```
 
-or you can simply select the ifrom in your developer tool and paste the following command in your console, now refresh the extension and you are good to go.
+or 
+
+Open the developer tool and select the extension iframe, now paste the following command in the console and refresh the extension widget, you are good to go.
 
 ```js
 $0.setAttribute("allow", "language-model;");
